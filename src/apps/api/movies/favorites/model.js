@@ -1,14 +1,13 @@
+const favoriteModel = require('./schema');
+
 class Favorites {
-    constructor() {
-        this.list = [];
-    }
-  
-    add(movie) { // CREATE
-        this.list.push(movie);
+    async add(movie) { // CREATE
+        console.log({movie});
+        return favoriteModel.create(movie);
     }
     
     getAll() { // READ
-        return this.list;
+        return favoriteModel.find();
     }
 
     remove(movieId) { // DELETE
