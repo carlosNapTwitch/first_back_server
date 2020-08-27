@@ -10,11 +10,9 @@ class Favorites {
         return favoriteModel.find();
     }
 
-    remove(movieId) { // DELETE
-        const itemToRemove = this.list.find((item, idx) => item.id === movieId);
-        const indexToRemove = this.list.indexOf(itemToRemove);
-        const elementoRemoved = this.list.splice(indexToRemove, 1);
-        return elementoRemoved;
+    deleteById(movieId) { // DELETE
+        console.log('movieId', movieId);
+        return favoriteModel.findByIdAndDelete(movieId);
     }
 }
 
