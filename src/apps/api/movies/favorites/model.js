@@ -7,12 +7,21 @@ class Favorites {
     }
     
     getAll() { // READ
-        return favoriteModel.find();
+        return favoriteModel.find().exec();
     }
 
     deleteById(movieId) { // DELETE
         console.log('movieId', movieId);
         return favoriteModel.findByIdAndDelete(movieId);
+    }
+
+    filterMovie() {
+        const myPormise = new Promise((resolve, reject) => {
+            //proceso 
+            if (true) resolve('todo bien')
+            reject('un problema')
+        });
+        return myPormise;
     }
 }
 

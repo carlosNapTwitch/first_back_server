@@ -1,9 +1,11 @@
 const MongoClient = require('mongodb').MongoClient;
 
-const dbHostUrl = 'mongodb://localhost:27017';
+// const dbHostUrl = 'mongodb://localhost:27017';
 const dbName = 'movies';
+const dbHostUrl = `mongodb+srv://mySuperUser:777ABCD@clustertwitch.c6i0x.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 const mongoConnection = () => {
+    console.log('connecting to: ', dbHostUrl)
     MongoClient.connect(dbHostUrl, (err, client) => {
         if (err){ console.log('error on mongodb connection', err); process.exit(); }
         else console.log('success on mongodb connection');

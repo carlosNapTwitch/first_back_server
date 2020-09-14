@@ -36,4 +36,13 @@ router.delete('/:movieId', async(req, res) => {
     }
 });
 
+router.get('/test', async(req, res) => {
+    try {
+        const resolve = await favModel.filterMovie();
+        res.send(resolve);
+    }catch(error){
+        res.status(500).send({error});
+    }
+})
+
 module.exports = router;
