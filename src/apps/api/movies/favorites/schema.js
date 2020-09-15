@@ -10,6 +10,12 @@ const FavoritesSchema = new mongoose.Schema({
     release_date: String,
     vote_average: Number,
     vote_count: Number
+}, {
+    writeConcern: {
+      w: 'majority',
+      j: true,
+      wtimeout: 1000,
+    }
 });
 
 const FavoriteModel = mongoose.model('favorites', FavoritesSchema);
