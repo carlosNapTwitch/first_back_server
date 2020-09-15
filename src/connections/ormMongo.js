@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const connectToDb = () => {
     //const dbHost = 'mongodb://localhost/';
     const dbName = 'movies';
-    const dbHost = `mongodb+srv://mySuperUser:777ABCD@clustertwitch.c6i0x.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+    const dbHost = `mongodb+srv://mySuperUser:777ABCD@clustertwitch.c6i0x.mongodb.net/${dbName}?retryWrites=true&w=majority;`;
 
     const connectionOptions = { useNewUrlParser: true, useUnifiedTopology: true };
     mongoose.connect(`${dbHost}${dbName}`, connectionOptions);
